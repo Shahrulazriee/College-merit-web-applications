@@ -1,0 +1,136 @@
+<%- include ("../_partial/_header") -%>
+
+<%- include ("../_partial/_sidebar2") -%>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <head>
+    <style>
+    .center {
+      margin: auto;
+      width: 100%;
+      border: 3px solid #6d6e6c;
+      padding: 10px;
+      position: center;
+      background-color: rgb(255, 255, 255)
+    }
+    .center1 {
+      margin: auto;
+      width: 100%;
+      border: 3px solid #6d6e6c;
+      padding: 10px;
+      position: center;
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+    }
+    .column {
+      float: left;
+      width: 30%;
+      padding: 10px;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: rgb(255, 255, 255);
+      column-count: 0;
+      column-gap: 40px;
+      background-color: #263525;
+      color: white;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .container{
+       margin: auto;
+       padding-left: 40px;
+    }
+    .hd{
+      text-align: center;
+      color: rgb(186, 29, 29);
+      font-weight: bold;
+    }
+    .h1{
+      padding-top:10px;
+      color:#494a47;
+    }
+    .body{
+      background-color: rgb(224, 227, 227)
+    }
+    .headers {
+      grid-area: header;
+      background-color: #420a0a;
+      padding: 10px;
+      text-align: left;
+      color: white;
+    }
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #2a382b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #7c9e7e;
+    }
+
+    </style>
+    </head>
+
+    <body class="body">
+    
+    <h1 class="h1">Unicycle:</h1>
+    <h1 class="h1">Merit Management</h1>
+
+    <br>
+    <!-- content -->
+    <div class="headers">
+      <h1 style="font-size: 20px;">ADDING STAFF</h1>
+    </div>
+    
+    <div class="center"id="" style="overflow:scroll; height:500px;">
+        <form method="POST" action="/addstaff1">
+            <label for="fname">Staff ID</label>
+            <input type="text" id="fname" name="staffID" placeholder="Staff ID">
+        
+            <label for="lname">Staff Name</label>
+            <input type="text" id="lname" name="staffName" placeholder="Staff Name">
+
+            <label for="lname">Email</label>
+            <input type="text" id="lname" name="email" placeholder="Email">
+
+            <label for="lname">Telephone Number</label>
+            <input type="text" id="lname" name="phoneNumber" placeholder="Telephone Number">
+
+            <label for="country">Role</label>
+            <select id="country" name="role">
+              <option value="false">Staff</option>
+              <option value="true">Admin</option>
+            </select>
+            <label for="lname">Password</label>
+            <input type="text" id="lname" name="password" placeholder="Password">
+
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+    </body>
+    </html>
+
+<%- include ("../_partial/_footer") -%>

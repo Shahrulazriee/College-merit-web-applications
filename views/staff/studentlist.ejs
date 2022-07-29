@@ -1,0 +1,167 @@
+<%- include ("../_partial/_header") -%> <%- include ("../_partial/_sidebar1")
+-%>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html>
+	<head>
+		<style>
+			.center {
+				margin: auto;
+				width: 100%;
+				border: 3px solid #6d6e6c;
+				padding: 10px;
+				position: center;
+				background-color: rgb(255, 255, 255);
+			}
+			.center1 {
+				margin: auto;
+				width: 100%;
+				border: 3px solid #6d6e6c;
+				padding: 10px;
+				position: center;
+				border-radius: 10px;
+				background-color: rgb(255, 255, 255);
+			}
+			.column {
+				float: left;
+				width: 30%;
+				padding: 10px;
+				border-radius: 10px;
+				border-style: solid;
+				border-color: rgb(255, 255, 255);
+				column-count: 0;
+				column-gap: 40px;
+				background-color: #263525;
+				color: white;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.container {
+				margin: auto;
+				padding-left: 40px;
+			}
+			.hd {
+				text-align: center;
+				color: rgb(186, 29, 29);
+				font-weight: bold;
+			}
+			.h1 {
+				padding-top: 10px;
+				color: #494a47;
+			}
+			.body {
+				background-color: rgb(224, 227, 227);
+			}
+			.headers {
+				grid-area: header;
+				background-color: #420a0a;
+				padding: 10px;
+				text-align: left;
+				color: white;
+			}
+			* {
+				box-sizing: border-box;
+			}
+
+			#myInput {
+				background-image: url("/css/searchicon.png");
+				background-position: 10px 10px;
+				background-repeat: no-repeat;
+				width: 100%;
+				font-size: 16px;
+				padding: 12px 20px 12px 40px;
+				border: 1px solid #ddd;
+				margin-bottom: 12px;
+			}
+
+			#myTable {
+				border-collapse: collapse;
+				width: 100%;
+				border: 1px solid #ddd;
+				font-size: 18px;
+			}
+
+			#myTable th,
+			#myTable td {
+				text-align: left;
+				padding: 12px;
+			}
+
+			#myTable tr {
+				border-bottom: 1px solid #ddd;
+			}
+
+			#myTable tr.header,
+			#myTable tr:hover {
+				background-color: #f1f1f1;
+			}
+		</style>
+	</head>
+
+	<body class="body">
+		<h1 class="h1">Unicycle:</h1>
+		<h1 class="h1">Merit Management</h1>
+
+		<br />
+		<!-- content -->
+		<div class="headers">
+			<h1 style="font-size: 20px">STUDENT LIST</h1>
+		</div>
+
+		<div class="center" id="" style="overflow: scroll; height: 500px">
+			<input
+				type="text"
+				id="myInput"
+				onkeyup="myFunction()"
+				placeholder="Search for names.."
+				title="Type in a name"
+			/>
+
+			<table id="myTable">
+				<tr class="header">
+					<th style="width: 5%">NO</th>
+					<th style="width: 20%">STUDENT ID</th>
+					<th style="width: 20%">STUDENT NAME</th>
+					<th style="width: 20%">AMOUNT OF MERIT</th>
+					<th style="width: 5%">EDIT</th>
+					<th style="width: 5%">DELETE</th>
+				</tr>
+				<% let count = 1; for (let student of data){ %>
+				<tr>
+					<td><%= count %></td>
+					<td><%= student.studentID %></td>
+					<td><%= student.studentName %></td>
+					<td><%= student.totalMerit %></td>
+				</tr>
+				<% } count++; %>
+			</table>
+		</div>
+
+		<script>
+			function myFunction() {
+				var input, filter, table, tr, td, i, txtValue;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				table = document.getElementById("myTable");
+				tr = table.getElementsByTagName("tr");
+				for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+						txtValue = td.textContent || td.innerText;
+						if (txtValue.toUpperCase().indexOf(filter) > -1) {
+							tr[i].style.display = "";
+						} else {
+							tr[i].style.display = "none";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
+
+<%- include ("../_partial/_footer") -%>

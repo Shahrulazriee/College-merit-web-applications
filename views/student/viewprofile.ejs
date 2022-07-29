@@ -1,0 +1,187 @@
+<%- include ("../_partial/_header") -%> <%- include ("../_partial/_sidebar") -%>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html>
+	<head>
+		<style>
+			.center {
+				margin: auto;
+				width: 90%;
+				border: 3px solid #6d6e6c;
+				padding: 10px;
+				position: center;
+				border-radius: 10px;
+				background-color: rgb(255, 255, 255);
+			}
+			.center1 {
+				margin: auto;
+				width: 100%;
+				height: 100%;
+				border: 3px solid #6d6e6c;
+				padding: 10px;
+				position: center;
+				border-radius: 10px;
+				background-color: rgb(255, 255, 255);
+				overflow: scroll;
+			}
+			.column {
+				float: left;
+				width: 30%;
+				padding: 10px;
+				border-radius: 10px;
+				border-style: solid;
+				border-color: rgb(255, 255, 255);
+				column-count: 0;
+				column-gap: 40px;
+				background-color: #263525;
+				color: white;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.container {
+				margin: auto;
+				padding-left: 40px;
+			}
+			.hd {
+				text-align: center;
+				color: rgb(186, 29, 29);
+				font-weight: bold;
+			}
+			.hf {
+				color: rgb(0, 0, 0);
+				font-family: Arial;
+			}
+			.h1 {
+				padding-top: 10px;
+				color: #494a47;
+			}
+			.body {
+				background-color: rgb(224, 227, 227);
+			}
+			* {
+				box-sizing: border-box;
+			}
+
+			/* Style the header */
+			.header {
+				grid-area: header;
+				background-color: #420a0a;
+				padding: 10px;
+				text-align: left;
+				color: white;
+			}
+
+			/* The grid container */
+			.grid-container {
+				border: 1px solid rgb(0, 0, 0);
+				display: grid;
+				grid-template-areas:
+					"header header header header header header"
+					"left left middle middle right right"
+					"footer footer footer footer footer footer";
+				/* grid-column-gap: 10px; - if you want gap between the columns */
+			}
+
+			.left,
+			.middle,
+			.right {
+				padding: 10px;
+			}
+
+			/* Style the left column */
+			.left {
+				grid-area: left;
+			}
+
+			/* Style the middle column */
+			.middle {
+				grid-area: middle;
+			}
+
+			/* Style the right column */
+			.right {
+				grid-area: right;
+			}
+
+			/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+			@media (max-width: 600px) {
+				.grid-container {
+					grid-template-areas:
+						"header header header header header header"
+						"left left left left left left"
+						"middle middle middle middle middle middle"
+						"right right right right right right"
+						"footer footer footer footer footer footer";
+				}
+			}
+			.card {
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+				max-width: 300px;
+				margin: auto;
+				text-align: center;
+				font-family: arial;
+				background-color: #263525;
+				border: 1px solid rgb(0, 0, 0);
+			}
+
+			.title {
+				color: rgb(255, 255, 255);
+				font-size: 18px;
+			}
+			.circle {
+				/* (A) SAME WIDTH & HEIGHT - SQUARE */
+				width: 200px;
+				height: 200px;
+
+				/* (B) 50% RADIUS = CIRCLE */
+				border-radius: 50%;
+				border-color: white;
+				border-style: dashed;
+
+				/* (C) BACKGROUND COLOR */
+				background: #000000;
+			}
+		</style>
+	</head>
+
+	<body class="body">
+		<h1 class="h1">Unicycle:</h1>
+		<h1 class="h1">Merit Management</h1>
+
+		<br />
+		<!-- content -->
+		<div class="grid-container">
+			<div class="header">
+				<h2 style="font-size: 20px">PROFILE</h2>
+			</div>
+
+			<div class="left" style="background-color: rgb(255, 255, 255)">
+				<div class="card">
+					<img
+						src="https://www.nicepng.com/png/detail/202-2024687_profile-icon-for-the-politics-category-profile-icon.png"
+						alt="Profile Pic"
+					/>
+					<h1 style="color: white"><%= data.studentName %></h1>
+					<p class="title"><%= data.studentID %></p>
+					<p style="color: white">
+						Merit collected: <%= data.totalMerit %>
+					</p>
+					<div style="margin: 24px 0">\</div>
+				</div>
+			</div>
+
+			<div class="middle" style="background-color: rgb(255, 255, 255)">
+				<div class="circle"></div>
+			</div>
+			<div class="right" style="background-color: rgb(255, 255, 255)">
+				<div class="circle"></div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<%- include ("../_partial/_footer") -%>

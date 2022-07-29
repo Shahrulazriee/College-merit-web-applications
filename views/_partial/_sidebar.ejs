@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-family: Impact;
+  color: white;
+}
+
+.sidenav a {
+  padding: 10px 6px 6px 10px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #818181;
+  display: block;
+  font-family: Impact;
+  color: white;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG-Picture.png" alt="Profile Pic" style="width: 100px;" /> 
+  <a style="color: rgb(129, 129, 129);">Navigation</a>
+  <a href="/studenthome"><i class="fa fa-home" style="font-size:25px"></i> &nbsp; &nbsp;Dashboard</a>
+  <a href="/viewprofile"><i class="fa fa-id-badge" style="font-size:25px"></i> &nbsp; &nbsp;&nbsp;&nbsp;Profile</a>
+  <a href="/leaderboard"><i class="fa fa-bar-chart" style="font-size:25px"></i> &nbsp; &nbsp;Leaderboard</a>
+</div>
+   
+</body>
+</html> 

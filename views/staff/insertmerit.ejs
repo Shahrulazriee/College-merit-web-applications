@@ -1,0 +1,129 @@
+
+    <%- include ("../_partial/_header") -%>
+
+    <%- include ("../_partial/_sidebar1") -%>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <html>
+        <head>
+        <style>
+        .center {
+          margin: auto;
+          width: 100%;
+          border: 3px solid #6d6e6c;
+          padding: 10px;
+          position: center;
+          background-color: rgb(255, 255, 255)
+        }
+        .center1 {
+          margin: auto;
+          width: 100%;
+          border: 3px solid #6d6e6c;
+          padding: 10px;
+          position: center;
+          border-radius: 10px;
+          background-color: rgb(255, 255, 255);
+        }
+        .column {
+          float: left;
+          width: 30%;
+          padding: 10px;
+          border-radius: 10px;
+          border-style: solid;
+          border-color: rgb(255, 255, 255);
+          column-count: 0;
+          column-gap: 40px;
+          background-color: #263525;
+          color: white;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        .container{
+           margin: auto;
+           padding-left: 40px;
+        }
+        .hd{
+          text-align: center;
+          color: rgb(186, 29, 29);
+          font-weight: bold;
+        }
+        .h1{
+          padding-top:10px;
+          color:#494a47;
+        }
+        .body{
+          background-color: rgb(224, 227, 227)
+        }
+        .headers {
+          grid-area: header;
+          background-color: #420a0a;
+          padding: 10px;
+          text-align: left;
+          color: white;
+        }
+        * {
+          box-sizing: border-box;
+        }
+
+        form.example input[type=text] {
+          padding: 10px;
+          font-size: 17px;
+          border: 1px solid grey;
+          float: left;
+          width: 80%;
+          background: #f1f1f1;
+          margin-top: 180px;
+        }
+
+        form.example button {
+          float: left;
+          width: 20%;
+          padding: 10px;
+          background: #3f5b3f;
+          color: white;
+          font-size: 17px;
+          border: 1px solid grey;
+          border-left: none;
+          cursor: pointer;
+          margin-top: 180px;
+        }
+
+        form.example button:hover {
+          background: #a9e0a1;
+        }
+
+        form.example::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
+        </head>
+
+        <body class="body">
+        
+        <h1 class="h1">Unicycle:</h1>
+        <h1 class="h1">Merit Management</h1>
+  
+        <br>
+        <!-- content -->
+        <div class="headers">
+          <h1 style="font-size: 20px;">INSERTING MERIT</h1>
+        </div>
+        
+        <div class="center" style="height:500px;">
+          <form class="example" method="POST" action="/insertmerit1" style="margin:auto;max-width:300px">
+            <input type="text" placeholder="Student ID.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+
+        </div>
+
+        </body>
+        </html>
+
+<%- include ("../_partial/_footer") -%>
