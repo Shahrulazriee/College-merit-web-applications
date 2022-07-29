@@ -6,6 +6,7 @@ var session = require("express-session");
 var flash = require("connect-flash");
 var params = require("./params/params");
 var bodyParser = require("body-parser");
+require("dotenv").config();
 
 const { cookie } = require("express/lib/response");
 var path = require("path");
