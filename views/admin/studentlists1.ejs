@@ -105,18 +105,18 @@
 		<div class="center" id="" style="overflow: scroll; height: 500px">
 			<form method="post" action="/editstudent">
 				<label for="lname">Student Name</label>
-				<p><%= data.studentName %></p>
+				<p><%- data.studentName %></p>
 				<input
 					type="text"
 					id="lname"
 					name="studentName"
 					placeholder="Student Name"
-					value="<%= data.studentName %>"
+					value="<%- data.studentName %>"
 				/>
 				<input
 					type="hidden"
 					name="student"
-					value="<%= data.studentID %>"
+					value="<%- data.studentID %>"
 				/>
 
 				<input type="submit" value="Submit" />

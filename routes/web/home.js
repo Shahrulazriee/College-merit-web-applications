@@ -581,11 +581,10 @@ router.get("/studentlists1/:id", function (req, res) {
 	console.log(req.params.id);
 	StudentInfo.findOne({ studentID: req.params.id }, function (err, data) {
 		if (data) {
-			console.log(data1.studentName);
+			console.log(data.studentName);
 			res.render("admin/studentlists1", { data });
 		}
 	});
-	res.render("admin/studentlists1");
 });
 
 router.get("/insertmerits1", function (req, res) {
